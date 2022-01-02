@@ -7,8 +7,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class) // 테스트 진행 시 JUnit에 내장된 실행자가 아닌 SpringRunner라는 스프링 실행자를 사용
@@ -25,5 +27,16 @@ public class HelloControllerTest {
         mvc.perform(get("/hello")) // MockMvc를 통해 /hello 주소로 HTTP GET 요청
                 .andExpect(status().isOk()) // mvc.perform의 결과가 200인지 아닌지 상태 검증
                 .andExpect(content().string(hello)); // mvc.perform의 결과검증
+    }
+
+    @Test
+    public void helloDto() throws Exception{
+        String name = "hello";
+        int amount = 1000;
+
+        mvc.perform(get("/hello/dto").param("name", name).param("amount", String.valueOf(amount)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount)));
     }
 }
