@@ -1,4 +1,6 @@
 # Project exclude paths
 .gradle
 .idea
+.pem
+.ppk
 application-oauth.properties
