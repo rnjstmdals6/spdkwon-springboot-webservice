@@ -1,7 +1,7 @@
 # Project exclude paths
 .gradle
 .idea
-spdkwon-springboot-webservice.pem
-spdkwon-springboot-webservice.ppk
+*.pem
+*.ppk
 
 application-oauth.properties
