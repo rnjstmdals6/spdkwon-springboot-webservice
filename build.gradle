@@ -30,6 +30,7 @@ repositories { // 각종 의존성들을 어떤 원격 저장소에서 받을지
 dependencies {
     // compile -> implementation
     implementation('org.springframework.boot:spring-boot-starter-web') // 버전은 설정한 전역변수를 따라감
+    implementation('org.mariadb.jdbc:mariadb-java-client')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
