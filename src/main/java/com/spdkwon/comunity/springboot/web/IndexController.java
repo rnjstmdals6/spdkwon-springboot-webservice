@@ -19,23 +19,23 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
+
     @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user){ // 머스테치 스타터 덕분에 컨트롤러에서 문자열을 반활할 때 앞의 경로와 뒤의 파일 확장자는 자동으로 지정됨
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        if(user != null){
+        if (user != null) {
             model.addAttribute("userName", user.getName());
         }
         return "index";
     }
 
     @GetMapping("/posts/save")
-    public String postsSave(){
+    public String postsSave() {
         return "posts-save";
     }
 
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
+    public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
 
