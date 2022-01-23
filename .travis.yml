@@ -17,7 +17,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r spdkwon-springboot-webservice
+  - zip -r spdkwon-springboot-webservice *
   - mkdir -p deploy
   - mv spdkwon-springboot-webservice.zip deploy/spdkwon-springboot-webservice.zip
 
