@@ -21,7 +21,7 @@ apply plugin: 'io.spring.dependency-management' // 스프링 부트의 의존성
 // Gradle 기본 설정
 
 group 'com.spdkwon.comunity'
-version '1.0-SNAPSHOT'
+version '1.0.1-SNAPSHOT'
 
 repositories { // 각종 의존성들을 어떤 원격 저장소에서 받을지 정함
     mavenCentral()
