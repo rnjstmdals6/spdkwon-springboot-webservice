@@ -78,6 +78,10 @@ a {
     padding-top: 12px;
 }
 
+#tbody >a {
+    color: black;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;

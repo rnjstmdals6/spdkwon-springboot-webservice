@@ -1,5 +1,4 @@
 :root {
-    --text-color: #f0f4f5;
     --background-color:#065471;
     --accent-color: #d49466;
 }
@@ -27,6 +26,10 @@ a {
     font-size: 36px;
     color: white;
     padding-left: 80px;
+}
+
+.navbar :hover{
+
 }
 
 .navbar__logo i {
